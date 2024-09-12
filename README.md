@@ -37,10 +37,7 @@ Filtering is handled locally within the component. The table re-renders only whe
    ```bash
    git clone https://github.com/lisaborysenko/users-manager-app
 
-2. Install dependencies
+2. Install dependencies and run the application:
  ```bash
 npm install
-
-3. Run the application:
-```bash
 npm start
