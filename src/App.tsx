@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "./store/userSlice";
 import { AppDispatch, RootState } from "./store";
 
-import "./App.module.css";
+import UsersContainer from "./containers/Users";
+import Spinner from "./components/Spinner";
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
@@ -17,12 +18,10 @@ function App() {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  console.log(users);
-
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <Spinner />;
   if (error) return <p>{error}</p>;
 
-  return <div></div>;
+  return <UsersContainer users={users} />;
 }
 
 export default App;
